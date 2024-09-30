@@ -254,11 +254,21 @@ class Cli {
           message: 'Enter Rear Wheel Brand',
         },
       ])
-      .then((answers: { color: string; make: string; model: string; year: string; weight: string; topSpeed: string; }) => {
+      .then((answers: { color: string; make: string; model: string; year: string; weight: string; topSpeed: string; frontWheelDiameter: string; frontWheelBrand: string; rearWheelDiameter: string; rearWheelBrand: string;}) => {
         // TODO: Use the answers object to pass the required properties to the Motorbike constructor
         // TODO: push the motorbike to the vehicles array
         // TODO: set the selectedVehicleVin to the vin of the motorbike
         // TODO: perform actions on the motorbike
+
+        const frontWheel = new Wheel(
+          parseInt(answers.frontWheelDiameter),
+          answers.frontWheelBrand
+        );
+        const rearWheel = new Wheel(
+          parseInt(answers.rearWheelDiameter),
+          answers.rearWheelBrand
+        );
+
         const motorbike = new Motorbike(
           Cli.generateVin(),
           answers.color,
@@ -267,7 +277,7 @@ class Cli {
           parseInt(answers.year),
           parseInt(answers.weight),
           parseInt(answers.topSpeed),
-          []
+          [frontWheel, rearWheel]
         );
         // push the car to the vehicles array
         this.vehicles.push(motorbike);
