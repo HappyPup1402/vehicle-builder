@@ -7,6 +7,8 @@ class Motorbike extends Vehicle{
   // TODO: Declare properties of the Motorbike class
   // TODO: The properties should include vin, color, make, model, year, weight, top speed, and wheels
   // TODO: The types should be as follows: vin (string), color (string), make (string), model (string), year (number), weight (number), topSpeed (number), wheels (Wheel[])
+  
+  // Declare properties of the Motorbike class
   vin: string;
   color: string;
   make: string;
@@ -22,6 +24,7 @@ class Motorbike extends Vehicle{
   // TODO: The constructor should initialize the properties of the Motorbike class
   // TODO: The constructor should check if the wheels array has 2 elements and create 2 new default Wheel objects if it does not
 
+  // Constructor for the Motorbike class
   constructor(
     vin: string,
     color: string,
@@ -32,7 +35,11 @@ class Motorbike extends Vehicle{
     topSpeed: number,
     wheels: Wheel[]
   ){
+
+    // Call the constructor of the parent class, Vehicle
     super();
+
+    // Initialize properties of the Motorbike class
     this.vin = vin;
     this.color = color;
     this.make = make;
@@ -41,8 +48,10 @@ class Motorbike extends Vehicle{
     this.weight = weight;
     this.topSpeed = topSpeed;
 
+    // Check if the wheels array has 2 elements
+    // If not, create 2 new Wheel objects
+    // Otherwise, use the provided wheels array
     if (wheels.length !== 2) {
-      // Create 2 new default Wheel objects
       this.wheels = [new Wheel(), new Wheel()];
     } else {
       this.wheels = wheels;
@@ -61,9 +70,13 @@ class Motorbike extends Vehicle{
   // TODO: The method should log the details of the Motorbike
   // TODO: The details should include the VIN, make, model, year, weight, top speed, color, and wheels
 
+  // Override the printDetails method from the Vehicle class
   override printDetails(): void {
+
+    // Call the printDetails method of the parent class, Vehicle
     super.printDetails();
 
+    // Print details of the Motorbike class
     console.log(`VIN: ${this.vin}`);
     console.log(`Color: ${this.color}`);
     console.log(`Make: ${this.make}`);
@@ -72,6 +85,7 @@ class Motorbike extends Vehicle{
     console.log(`Weight: ${this.weight} lbs`);
     console.log(`Top Speed: ${this.topSpeed} mph`);
 
+    // Print details of the wheels
     console.log(
       `Wheel 1: ${this.wheels[0].getDiameter} inch with a ${this.wheels[0].getTireBrand} tire`
     );

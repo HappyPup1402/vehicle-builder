@@ -21,7 +21,7 @@ To install and set up the project, follow these steps:
 1. Clone the repository: https://github.com/HappyPup1402/vehicle-builder
 2. Navigate to the project directory:
     ```
-    cd .../vehicle-builder/Develop
+    cd ../vehicle-builder/Develop
     ```
 3. Run commands in the terminal:
     ```
@@ -43,7 +43,7 @@ Follows the prompts provided to create a new vehicle and to perform any action o
 
 ## Video Walkthrough
 
-Video Walkthrough link: 
+Video Walkthrough link: https://app.screencastify.com/v2/manage/videos/8KZu3rluhnfTrx9zeIoe
 
 ## Questions
 

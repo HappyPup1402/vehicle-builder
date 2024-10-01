@@ -181,6 +181,8 @@ class Cli {
         // TODO: push the truck to the vehicles array
         // TODO: set the selectedVehicleVin to the vin of the truck
         // TODO: perform actions on the truck
+
+        // creates a new Truck object
         const truck = new Truck(
           Cli.generateVin(),
           answers.color,
@@ -193,8 +195,11 @@ class Cli {
           parseInt(answers.towingCapacity)
         );
         
+        // push the truck to the vehicles array
         this.vehicles.push(truck);
+        // set the selectedVehicleVin to the vin of the truck
         this.selectedVehicleVin = truck.vin;
+        // perform actions on the truck
         this.performActions();
       });
   }
@@ -260,6 +265,7 @@ class Cli {
         // TODO: set the selectedVehicleVin to the vin of the motorbike
         // TODO: perform actions on the motorbike
 
+        // creates two wheel objects representing the front and rear wheels
         const frontWheel = new Wheel(
           parseInt(answers.frontWheelDiameter),
           answers.frontWheelBrand
@@ -269,6 +275,7 @@ class Cli {
           answers.rearWheelBrand
         );
 
+        // creates a new Motorbike object
         const motorbike = new Motorbike(
           Cli.generateVin(),
           answers.color,
@@ -279,11 +286,11 @@ class Cli {
           parseInt(answers.topSpeed),
           [frontWheel, rearWheel]
         );
-        // push the car to the vehicles array
+        // push the motorbike to the vehicles array
         this.vehicles.push(motorbike);
-        // set the selectedVehicleVin to the vin of the car
+        // set the selectedVehicleVin to the vin of the motorbike
         this.selectedVehicleVin = motorbike.vin;
-        // perform actions on the car
+        // perform actions on the motorbike
         this.performActions();
       });
   }
@@ -311,6 +318,7 @@ class Cli {
         // TODO: if it is not, tow the selected vehicle then perform actions on the truck to allow the user to select another action
         const selectedVehicle = answers.vehicleToTow;
 
+        // checks if its a Truck object before towing
         if (selectedVehicle instanceof Truck) {
           console.log("The truck cannot tow itself.");
           this.performActions();
@@ -408,6 +416,7 @@ class Cli {
         // TODO: add statements to perform the tow action only if the selected vehicle is a truck. Call the findVehicleToTow method to find a vehicle to tow and pass the selected truck as an argument. After calling the findVehicleToTow method, you will need to return to avoid instantly calling the performActions method again since findVehicleToTow is asynchronous.
         // TODO: add statements to perform the wheelie action only if the selected vehicle is a motorbike
         else if (answers.action === 'Tow') {
+          // find the selected vehicle and tow it
           const selectedVehicle = this.vehicles.find(v => v.vin === this.selectedVehicleVin);
           if (selectedVehicle instanceof Truck) {
             this.findVehicleToTow(selectedVehicle);
@@ -418,6 +427,7 @@ class Cli {
           }
         } 
         else if (answers.action === 'Wheelie') {
+          //find selected motorbike and perform a wheelie
           const selectedVehicle = this.vehicles.find(v => v.vin === this.selectedVehicleVin);
           if (selectedVehicle instanceof Motorbike) {
             selectedVehicle.wheelie();
