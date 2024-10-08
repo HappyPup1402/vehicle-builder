@@ -43,7 +43,7 @@ Follows the prompts provided to create a new vehicle and to perform any action o
 
 ## Video Walkthrough
 
-Video Walkthrough link: https://app.screencastify.com/v2/manage/videos/8KZu3rluhnfTrx9zeIoe
+Video Walkthrough link: https://app.screencastify.com/v3/watch/8KZu3rluhnfTrx9zeIoe
 
 ## Questions
 
